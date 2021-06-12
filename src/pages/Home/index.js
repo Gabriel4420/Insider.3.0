@@ -49,8 +49,8 @@ const Home = () => {
 
         try {
             
-            const response = await api.post('/shorten',{
-                long_url:input
+            const response = await api.post('shorten',{
+                long_url: input
             });
 
             setData(response.data);
@@ -58,6 +58,7 @@ const Home = () => {
 
             //DEU TUDO CERTO, PRECISO SALVAR O LINK EM UMA LISTA NESSE STORAGE
             saveLink('sujeitoLinks',response.data);
+
             Keyboard.dismiss();
             setLoading(false);
 
